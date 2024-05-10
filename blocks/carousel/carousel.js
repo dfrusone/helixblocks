@@ -104,6 +104,21 @@ export default async function decorate(block) {
   const container = document.createElement('div');
   container.classList.add('carousel-slides-container');
 
+
+  const fullscreenButton = document.createElement('button');
+  fullscreenButton.classList.add('fullscreen-button');
+  fullscreenButton.setAttribute('aria-label', 'Toggle Fullscreen');
+  container.append(fullscreenButton);
+
+  fullscreenButton.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      block.requestFullscreen();
+    }
+  });
+
+
   const slidesWrapper = document.createElement('ul');
   slidesWrapper.classList.add('carousel-slides');
   block.prepend(slidesWrapper);
@@ -123,7 +138,6 @@ export default async function decorate(block) {
       <button type="button" class= "slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
       <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
     `;
-
     container.append(slideNavButtons);
   }
 
