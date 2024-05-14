@@ -11,11 +11,9 @@
     {
       "id": "preview.html",
       "title": "Preview",
-      "environments": ["any"],
+      "environments": ["edit"],
       "url": "/tools/sidekick/preview.html",
-      "includePaths": ["**.docx**"],
-      "passConfig": true,
-      "passReferrer": true
+      "includePaths": ["**.docx**"]
     }
 
 
