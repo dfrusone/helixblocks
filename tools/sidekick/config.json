@@ -9,7 +9,7 @@
       "includePaths": ["**.docx**"]
     },
     {
-      "id": "preview",
+      "id": "preview.html",
       "title": "Preview",
       "environments": ["any"],
       "url": "/tools/sidekick/preview.html",
